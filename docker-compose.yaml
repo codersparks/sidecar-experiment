@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  main:
+    image: codersparks/sidecar-main-service:1.0.0
+    container_name: main-service
+    hostname: main-service
+    ports:
+      - 3000:3000
+      - 3001:3001
+  proxy-sidecar:
+    depends_on: 
+      - main
+    image: codersparks/sidecar-auth-proxy:1.0.0
+    container_name: proxy-sidecar
+    network_mode: "service:main"
