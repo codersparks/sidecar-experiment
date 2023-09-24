@@ -1,6 +1,7 @@
 version: "3.7"
 services:
   main:
+    build: ./sidecar-main-service
     image: codersparks/sidecar-main-service:1.0.0
     container_name: main-service
     hostname: main-service
@@ -8,6 +9,7 @@ services:
       - 3000:3000
       - 3001:3001
   proxy-sidecar:
+    build: ./sidecar-auth-proxy
     depends_on: 
       - main
     image: codersparks/sidecar-auth-proxy:1.0.0
