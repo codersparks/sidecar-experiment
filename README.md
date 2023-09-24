@@ -7,9 +7,6 @@ A simple app to demonstrate using a header modifying proxy as a sidecar, first i
 At the moment, it is just has two apps with one (./sidecar-auth-proxy), a golang web app running on port 3001 acting as a simple proxy for the other (./sidecar-main-service), a TS express service runninng on port 3001
 
 ### TODO
-
-* Dockerise the two services
-* Create a docker compose file that will launch the auth proxy as a sidecar for main service
 * Deploy to kubenetes cluster (using sidecar pattern).
 * Convert sidecar-auth-proxy to make use of OpenPolicy to set the required headers
 
